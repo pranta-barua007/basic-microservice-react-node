@@ -68,5 +68,5 @@ app.post("/events", async (req, res) => {
 const PORT = process.env.PORT || 4001;
 
 app.listen(PORT, () => {
-  console.log(`listening on ${PORT}....`);
+  console.log(`comment service listening on ${PORT}....`);
 });

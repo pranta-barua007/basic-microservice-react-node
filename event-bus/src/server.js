@@ -19,5 +19,5 @@ app.post('/events', (req, res) => {
 });
 
 app.listen(4005, () => {
-    console.log('listenting in 4005....');
+    console.log('event-bus service listenting in 4005....');
 })

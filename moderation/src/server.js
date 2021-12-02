@@ -28,5 +28,5 @@ app.post('/events', async (req, res) => {
 });
 
 app.listen(4003, () => {
-    console.log('listening on 4003....');
+    console.log('comment moderaion service listening on 4003....');
 });
