@@ -10,11 +10,12 @@ app.use(morgan('combined'));
 app.post('/events', (req, res) => {
     const event = req.body;
 
-    axios.post('http://localhost:4000/events', event);
-    axios.post('http://localhost:4001/events', event);
-    axios.post('http://localhost:4002/events', event);
-
-    res.json({ status: 'ok' });
+    axios.post('http://localhost:4000/events', event); // posts service
+    axios.post('http://localhost:4001/events', event); // comments service
+    axios.post('http://localhost:4002/events', event); // query service
+    axios.post('http://localhost:4003/events', event); // comment moderation service
+   
+    return res.status(200).json({ status: 'ok' });
 });
 
 app.listen(4005, () => {
