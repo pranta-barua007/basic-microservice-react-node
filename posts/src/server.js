@@ -18,7 +18,7 @@ app.post('/posts', async (req, res) => {
     const id = randomBytes(4).toString('hex');
     postsDB[id] = {id, title};
 
-    await axios.post('http://localhost:4005/events', {
+    await axios.post('http://event-bus-srv:4005/events', {
        type: 'PostCreated',
        data: {id, title} 
     });
@@ -36,5 +36,6 @@ app.post('/events', (req, res) => {
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
+    console.log("v22");
     console.log(`posts service listening on ${PORT}....`);
 });
