@@ -13,7 +13,7 @@ app.use(morgan('combined'));
 const postsDB = {};
 
 app.get('/posts', (req, res) => res.status(200).json(postsDB));
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
     const { title } = req.body;
     const id = randomBytes(4).toString('hex');
     postsDB[id] = {id, title};
@@ -37,5 +37,5 @@ const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
     console.log("v22");
-    console.log(`posts service listening on ${PORT}....`);
+    console.log(`posts service listening on ${PORT}...`);
 });
