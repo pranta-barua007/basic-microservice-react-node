@@ -50,7 +50,9 @@ app.post('/events', (req, res) => {
     return res.status(200).json({ message: `${type} Event processed successfully` });
 });
 
-app.listen(4002, async () => {
+const PORT = process.env.PORT || 4002;
+
+app.listen(PORT, async () => {
     console.log('query service listening on 4002...');
 
     const res = await axios.get('http://event-bus-srv:4005/events');

@@ -27,6 +27,8 @@ app.post('/events', async (req, res) => {
     return res.status(200).json({message: 'Comment moderated'});
 });
 
-app.listen(4003, () => {
+const PORT = process.env.PORT || 4003;
+
+app.listen(PORT, () => {
     console.log('comment moderaion service listening on 4003....');
 });

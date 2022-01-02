@@ -26,6 +26,8 @@ app.get('/events', (req, res) => {
     return res.status(200).json(eventsDB);
 });
 
-app.listen(4005, () => {
+const PORT = process.env.PORT || 4005;
+
+app.listen(PORT, () => {
     console.log('event-bus service listenting in 4005....');
 })
